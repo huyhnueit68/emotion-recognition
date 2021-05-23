@@ -1,0 +1,39 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emotion recognition</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'js/index.js' %}">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Emotion recognition of student</h1>
+    </header>
+    <div class="sections">
+        <section class="active">
+            <input type="text" placeholder="FullName" id="fullname" />
+            <input type="text" placeholder="ClassName" id="classname" />
+            <div class="images">
+                <input type="file" id="imagefile" name="imagefile" accept="image/*" multiple>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <ul>
+            <li><span id="reset">reset</span></li>
+            <li><span id="send">submit</span></li>
+        </ul>
+    </footer>
+</div>
+<div class="notification"></div>
+<footer>
+   copyright © Pham Quang Huy - HNUE
+</footer>
+</body>
+</html>

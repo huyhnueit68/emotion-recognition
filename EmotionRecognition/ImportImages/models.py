@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+
+
 # Create your models here.
 
 class RequestClient(models.Model):
@@ -9,6 +11,7 @@ class RequestClient(models.Model):
     create_at = models.DateTimeField(auto_now=True, blank=True)
     status = models.IntegerField(default=1)
     result_client = models.IntegerField()
+
 
 class RequestImages(models.Model):
     image_path = models.ImageField()
