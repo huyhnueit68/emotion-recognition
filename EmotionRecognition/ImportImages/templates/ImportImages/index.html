@@ -11,27 +11,32 @@
     <link rel="stylesheet" href="{% static 'js/index.js' %}">
 </head>
 <body>
-<div class="wrapper">
+
+<!--    {% csrf_token %}-->
+    <div class="wrapper">
     <header>
         <h1>Emotion recognition of student</h1>
     </header>
     <div class="sections">
         <section class="active">
-            <input type="text" placeholder="FullName" id="fullname" />
-            <input type="text" placeholder="ClassName" id="classname" />
-            <div class="images">
-                <input type="file" id="imagefile" name="imagefile" accept="image/*" multiple>
-            </div>
+            <form action="{% url 'resultClient' %}" method="GET" name="f" enctype='multipart/form-data' >
+                <input type="text" placeholder="FullName" id="fullname" name="fullname"/>
+                <input type="text" placeholder="ClassName" id="classname" name="classname" />
+                <input type="file" name="img_file[]" id="img_file" accept="image/*" multiple />
+                <input style="background-color: #58ACFA" type="submit" class="submit_button" id="submitForm" value="Submit" name="submitRequest" onclick="return validateData();">
+            </form>
         </section>
     </div>
     <footer>
         <ul>
             <li><span id="reset">reset</span></li>
-            <li><span id="send">submit</span></li>
+            <li><input hidden type="reset" id="send"></li>
         </ul>
     </footer>
 </div>
+</form>
 <div class="notification"></div>
+
 <footer>
    copyright © Pham Quang Huy - HNUE
 </footer>

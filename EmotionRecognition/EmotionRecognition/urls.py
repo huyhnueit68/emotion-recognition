@@ -22,6 +22,6 @@ urlpatterns = [
         template_name='index.css',
         content_type='text/css')
     ),
-    path("importimages/", include("ImportImages.urls")),
-    path('admin/', admin.site.urls),
+    path("", include("ImportImages.urls")),
+    path('admin/', admin.site.urls)
 ]

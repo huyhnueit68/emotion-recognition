@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 
 
 # Create your models here.
@@ -14,7 +13,7 @@ class RequestClient(models.Model):
 
 
 class RequestImages(models.Model):
-    image_path = models.ImageField()
+    image_path = models.ImageField(upload_to='img/%y')
     request_image_id = models.ForeignKey(RequestClient, on_delete=models.CASCADE)
     status = models.IntegerField(default=1)
     result_image = models.CharField(max_length=1000)
